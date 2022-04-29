@@ -1,0 +1,280 @@
+@use 'style-guide' as sg;
+
+@mixin mobile {
+    @media only screen and (max-width: 480px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media only screen and (max-width: 768px) {
+        @content
+    }
+}
+
+@mixin flexcenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin basereset {
+    margin: 0;
+    padding: 0;
+}
+
+.hiddenOpacity { 
+    opacity: 0 !important; 
+    cursor: default !important;
+
+    & * {
+        cursor: default !important;
+    }
+}
+
+.bold { font-weight: 700; }
+.light { font-weight: 500; }
+
+.font-xxsm { font-size: 9px; }
+.font-xsm { font-size: 12px; }
+.font-sm { font-size: 15px; }
+.font-m { font-size: 18px; }
+
+body {
+    font-family: sg.$ff;
+    background-color: sg.$l-gray-cyan-bg;
+    @include basereset();
+}
+
+.card {
+    border-radius: 6px;
+    padding: 24px;
+    box-shadow: 0 8px 18px -15px sg.$d-desaturated-cyan;
+}
+
+
+.bg-header {
+    width: 100%;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 156px;
+        background: sg.$d-desaturated-cyan;
+    }
+
+    .mobile {
+        display: none;
+        
+        @include mobile {
+            display: initial;
+        }
+    }
+
+    .desktop {
+        @include mobile {
+            display: none;
+        }
+    }
+}
+
+main {
+    width: clamp(320px, 80%, 1024px);
+    margin: auto;
+    position: relative;
+    
+
+    .filter {
+        display: flex;
+        position: relative;
+        transform: translate(0, -50%);
+        justify-content: space-between;
+
+        .filters {
+            @include basereset();
+            list-style: none;
+            @include flexcenter();
+            justify-content: start;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            li {
+                @include basereset();
+                @include flexcenter();
+                border-radius: 4px;
+                overflow: hidden;
+
+                & > span {
+                    padding: 4px 6px;
+                }
+
+                .remove {
+                    border: none;
+                    width: 22px;
+                    height: 22px;
+                    cursor: pointer;
+                    transition-duration: 250ms;
+                    transition-property: background-color;
+
+                    &:hover {
+                        background-color: sg.$vd-gray-cyan;
+                    }
+                }
+            }
+        }
+
+        .clear {
+            background-color: inherit;
+            border: none;
+            transition-duration: 250ms;
+            transition-property: color, text-decoration;
+            cursor: pointer;
+            
+            &:hover {
+                color: sg.$d-desaturated-cyan;
+                text-decoration: underline;
+            }
+        }
+    }
+    .cards {
+        // margin-top: 48px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        @include tablet() {
+            gap: 32px;
+        }
+
+        .featured {
+            border-left: 6px solid sg.$d-desaturated-cyan;
+        }
+        
+        .job-card {
+            @include flexcenter();
+            justify-content: space-between;
+            position: relative;
+
+            @include tablet() {
+                display: block;
+            }
+
+            .info {
+                @include flexcenter();
+                gap: 24px;
+
+                @include tablet() {
+                    justify-content: start;
+                }
+
+                .logo-wrap {
+                    img {
+                        width: 64px;
+
+                        @include tablet() {
+                            width: 38px;
+                        }
+                    }
+
+                    @include tablet() {
+                        position: absolute;
+                        bottom: 100%;
+                        transform: translate(0, 50%);
+                    }
+                }
+                
+                .text-wrap {
+                    @include flexcenter();
+                    flex-direction: column;
+                    gap: 8px;
+                    align-items: start;
+
+                    .company {
+                        @include flexcenter();
+                        justify-content: start;
+
+                        .name {
+                            display: inline-block;
+                            @include basereset();
+                        }
+
+                        .features {
+                            margin: 0 12px;
+                            display: flex;
+                            gap: 4px;
+
+                            & > * {
+                                display: inline-block;
+                                padding: 6px;
+                                border-radius: 18px;
+                                text-align: center;
+
+                                p {
+                                    @include basereset();
+                                    display: inline-block;
+                                }
+
+                            }
+                        }
+                    }
+
+
+                    .position {
+                        @include basereset();
+                        transition-property: color;
+                        transition-duration: 250ms;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: sg.$d-desaturated-cyan;
+                        }
+                    }
+
+                    .tags {
+                        @include flexcenter();
+                        justify-content: start;
+                        gap: 4px;
+                    }
+                }
+            }
+
+            .categories {
+                ul {
+                    list-style: none;
+                    @include basereset();
+                    display: flex;
+                    justify-content: end;
+                    gap: 15px;
+                    flex-wrap: wrap;
+
+                    @include tablet() {
+                        justify-content: start;
+                    }
+
+                    li {
+                        @include basereset();
+                        padding: 8px;
+                        border-radius: 4px;
+                        transition: background-color, color;
+                        transition-duration: 250ms;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: sg.$d-desaturated-cyan;
+                            color: sg.$l-gray-cyan-bg;
+                        }
+                    }
+                }
+                @include tablet() {
+                    &::before {
+                        display: block;
+                        content: "";
+                        width: 100%;
+                        margin: 12px 0;
+                        border-top: 1px solid sg.$d-gray-cyan;
+                    }
+                }
+            }
+        }
+    }
+
+}

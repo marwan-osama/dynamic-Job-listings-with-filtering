@@ -1,0 +1,322 @@
+.d-desaturated-cyan-bg {
+  background-color: #5ba4a4;
+}
+
+.d-desaturated-cyan-clr {
+  color: #5ba4a4;
+}
+
+.l-gray-cyan-bg-bg {
+  background-color: #effafa;
+}
+
+.l-gray-cyan-bg-clr {
+  color: #effafa;
+}
+
+.l-gray-cyan-ft-bg {
+  background-color: #eef6f6;
+}
+
+.l-gray-cyan-ft-clr {
+  color: #eef6f6;
+}
+
+.d-gray-cyan-bg {
+  background-color: #7b8e8e;
+}
+
+.d-gray-cyan-clr {
+  color: #7b8e8e;
+}
+
+.vd-gray-cyan-bg {
+  background-color: #2c3a3a;
+}
+
+.vd-gray-cyan-clr {
+  color: #2c3a3a;
+}
+
+.white-bg {
+  background-color: white;
+}
+
+.white-clr {
+  color: white;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+.hiddenOpacity {
+  opacity: 0 !important;
+  cursor: default !important;
+}
+.hiddenOpacity * {
+  cursor: default !important;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.light {
+  font-weight: 500;
+}
+
+.font-xxsm {
+  font-size: 9px;
+}
+
+.font-xsm {
+  font-size: 12px;
+}
+
+.font-sm {
+  font-size: 15px;
+}
+
+.font-m {
+  font-size: 18px;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  background-color: #effafa;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  border-radius: 6px;
+  padding: 24px;
+  box-shadow: 0 8px 18px -15px #5ba4a4;
+}
+
+.bg-header {
+  width: 100%;
+  position: relative;
+}
+.bg-header img {
+  width: 100%;
+  height: 156px;
+  background: #5ba4a4;
+}
+.bg-header .mobile {
+  display: none;
+}
+@media only screen and (max-width: 480px) {
+  .bg-header .mobile {
+    display: initial;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .bg-header .desktop {
+    display: none;
+  }
+}
+
+main {
+  width: clamp(320px, 80%, 1024px);
+  margin: auto;
+  position: relative;
+}
+main .filter {
+  display: flex;
+  position: relative;
+  transform: translate(0, -50%);
+  justify-content: space-between;
+}
+main .filter .filters {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: start;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+main .filter .filters li {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  overflow: hidden;
+}
+main .filter .filters li > span {
+  padding: 4px 6px;
+}
+main .filter .filters li .remove {
+  border: none;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  transition-duration: 250ms;
+  transition-property: background-color;
+}
+main .filter .filters li .remove:hover {
+  background-color: #2c3a3a;
+}
+main .filter .clear {
+  background-color: inherit;
+  border: none;
+  transition-duration: 250ms;
+  transition-property: color, text-decoration;
+  cursor: pointer;
+}
+main .filter .clear:hover {
+  color: #5ba4a4;
+  text-decoration: underline;
+}
+main .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+@media only screen and (max-width: 768px) {
+  main .cards {
+    gap: 32px;
+  }
+}
+main .cards .featured {
+  border-left: 6px solid #5ba4a4;
+}
+main .cards .job-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  main .cards .job-card {
+    display: block;
+  }
+}
+main .cards .job-card .info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+@media only screen and (max-width: 768px) {
+  main .cards .job-card .info {
+    justify-content: start;
+  }
+}
+main .cards .job-card .info .logo-wrap img {
+  width: 64px;
+}
+@media only screen and (max-width: 768px) {
+  main .cards .job-card .info .logo-wrap img {
+    width: 38px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  main .cards .job-card .info .logo-wrap {
+    position: absolute;
+    bottom: 100%;
+    transform: translate(0, 50%);
+  }
+}
+main .cards .job-card .info .text-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  align-items: start;
+}
+main .cards .job-card .info .text-wrap .company {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: start;
+}
+main .cards .job-card .info .text-wrap .company .name {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+main .cards .job-card .info .text-wrap .company .features {
+  margin: 0 12px;
+  display: flex;
+  gap: 4px;
+}
+main .cards .job-card .info .text-wrap .company .features > * {
+  display: inline-block;
+  padding: 6px;
+  border-radius: 18px;
+  text-align: center;
+}
+main .cards .job-card .info .text-wrap .company .features > * p {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+main .cards .job-card .info .text-wrap .position {
+  margin: 0;
+  padding: 0;
+  transition-property: color;
+  transition-duration: 250ms;
+  cursor: pointer;
+}
+main .cards .job-card .info .text-wrap .position:hover {
+  color: #5ba4a4;
+}
+main .cards .job-card .info .text-wrap .tags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: start;
+  gap: 4px;
+}
+main .cards .job-card .categories ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: end;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+@media only screen and (max-width: 768px) {
+  main .cards .job-card .categories ul {
+    justify-content: start;
+  }
+}
+main .cards .job-card .categories ul li {
+  margin: 0;
+  padding: 0;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color, color;
+  transition-duration: 250ms;
+  cursor: pointer;
+}
+main .cards .job-card .categories ul li:hover {
+  background-color: #5ba4a4;
+  color: #effafa;
+}
+@media only screen and (max-width: 768px) {
+  main .cards .job-card .categories::before {
+    display: block;
+    content: "";
+    width: 100%;
+    margin: 12px 0;
+    border-top: 1px solid #7b8e8e;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

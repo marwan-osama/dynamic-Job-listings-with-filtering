@@ -1,0 +1,34 @@
+$fs: 15px;
+
+$ff: "League Spartan", sans-serif;
+
+$fw1: 500;
+$fw2: 700;
+
+
+$d-desaturated-cyan: hsl(180, 29%, 50%);
+$l-gray-cyan-bg: hsl(180, 52%, 96%);
+$l-gray-cyan-ft: hsl(180, 31%, 95%);
+$d-gray-cyan: hsl(180, 8%, 52%);
+$vd-gray-cyan: hsl(180, 14%, 20%);
+
+$colors: (
+    "d-desaturated-cyan": hsl(180, 29%, 50%),
+    "l-gray-cyan-bg": hsl(180, 52%, 96%),
+    "l-gray-cyan-ft": hsl(180, 31%, 95%),
+    "d-gray-cyan": hsl(180, 8%, 52%),
+    "vd-gray-cyan": hsl(180, 14%, 20%),
+    "white": white
+);
+
+@each $name, $color in $colors {
+    .#{$name}-bg {
+        background-color: $color;
+    }
+    .#{$name}-clr {
+        color: $color;
+    }
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
